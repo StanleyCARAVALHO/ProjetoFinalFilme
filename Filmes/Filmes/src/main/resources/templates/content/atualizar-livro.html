@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FILMES</title>
+
+    <!-- css bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- favicon -->
+    <link href="../imagens/book_icon.png" rel="shortcut icon" type="image/png" />
+  </head>
+  <body data-bs-theme="dark">
+    <!-- header -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5" style="border-bottom: 1px solid blue;">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../imagens/book_icon.png" alt="Bootstrap" width="30" height="24"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="/">VOLTAR</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/cadastrarfilmes">CADASTRAR FILME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/listarfilmes">LISTA DE FILMES CADASTRADOS</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+  </header>
+
+    <!-- container -->
+    <main>
+        <div class="container">
+            <h1>Atualizar dados do Filme  <span th:text="${livro.titulo}"></span></h1>
+            <hr class="mb-5" />
+
+            <!-- formulário -->
+            <form method="POST">
+                <div class="row">
+                    <!-- título -->
+                    <div class="col-12 col-md-9 mb-3">
+                        <label for="titulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título do livro" th:value="${livro.titulo}" />
+                    </div>
+                    
+                    <!-- nome do autor -->
+                    <div class="col-12 col-md-5 mb-3">
+                        <label for="autorNome" class="form-label">Nome do Autor</label>
+                        <input type="text" class="form-control" id="autorNome" name="autorNome" placeholder="Nome do Autor" th:value="${livro.autorNome}" />
+                    </div>
+                    
+                    <!-- sobrenome do autor -->
+                    <div class="col-12 col-md-7 mb-3">
+                        <label for="autorSobrenome" class="form-label">Sobrenome do Autor</label>
+                        <input type="text" class="form-control" id="autorSobrenome" name="autorSobrenome" placeholder="Sobrenome do Autor" th:value="${livro.autorSobrenome}" />
+                    </div>
+                    
+                    <!-- bilheteria -->
+                    <div class="col-12 col-md-9 mb-3">
+                        <label for="bilheteria" class="form-label">Bilheteria</label>
+                        <input type="text" class="form-control" id="bilheteria" name="bilheteria" placeholder="Bilheteria" th:value="${livro.bilheteria}" />
+                    </div>
+          			
+          			
+          			<!-- lançamento -->
+                    <div class="col-12 col-md-9 mb-3">
+                        <label for="edicao" class="form-label">Lançamento</label>
+                        <input type="text" class="form-control" id="edicao" name="edicao" placeholder="Bilheteria" th:value="${livro.edicao}" />
+                    </div>
+
+                    <!-- botão -->
+                    <div class="col-12 col-md-10 mb-5">
+                        <button type="submit" class="btn btn-primary">Alterar dados do Filme</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- js bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
